@@ -8,7 +8,7 @@ export default function Layout({ children }) {
   const location = useLocation();
 
   const navItems = [
-    { title: "שאלון", url: createPageUrl("Survey"), icon: ClipboardList },
+    { title: "שאלון", url: "/", icon: ClipboardList },
   ];
 
   return (
