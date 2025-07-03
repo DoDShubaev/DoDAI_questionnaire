@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
@@ -415,7 +414,9 @@ ${analysis}
           </CardHeader>
           <CardContent>
             <div className="prose prose-lg max-w-none text-slate-700 leading-relaxed whitespace-pre-line" style={{ direction: 'rtl', textAlign: 'right' }}>
-              {analysis}
+              {analysis ? analysis : (
+                <span className="text-red-500 font-bold">\n⚠️ לא הצלחנו להפיק עבורך ניתוח AI כרגע. התשובות שלך נשמרו בהצלחה! תוכל לנסות שוב מאוחר יותר.\n</span>
+              )}
             </div>
           </CardContent>
         </Card>

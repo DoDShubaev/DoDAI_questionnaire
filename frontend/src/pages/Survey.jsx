@@ -163,6 +163,8 @@ const QUESTIONS = [
   }
 ];
 
+const API_BASE_URL = "https://dodai-beckend.onrender.com";
+
 export default function Survey() {
   const [currentStep, setCurrentStep] = useState(-1); // -1 for welcome
   const [responses, setResponses] = useState({});
@@ -293,11 +295,7 @@ export default function Survey() {
     return (
       <div className="min-h-screen bg-slate-50" dir="rtl">
         <div className="container mx-auto px-4 py-8" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
-          {aiAnalysis ? (
-            <AIAnalysis analysis={aiAnalysis} responses={responses} />
-          ) : (
-            <ThankYouScreen />
-          )}
+          <AIAnalysis analysis={aiAnalysis} responses={responses} />
         </div>
       </div>
     );
