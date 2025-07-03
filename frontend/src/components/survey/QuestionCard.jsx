@@ -265,7 +265,7 @@ export default function QuestionCard({
           style={{ direction: 'rtl' }}
         >
           <div className="relative">
-            <Label htmlFor="first_name" className="text-right block mb-3 text-base font-medium text-slate-700" style={{ textAlign: 'right' }}>
+            <Label htmlFor="first_name" className="text-right block mb-3 text-base font-medium text-slate-700" style={{ textAlign: 'right', direction: 'rtl' }}>
               <div className="flex items-center gap-2 justify-end">
                 <User className="w-4 h-4 text-emerald-600" />
                 השם שלך
@@ -280,26 +280,7 @@ export default function QuestionCard({
               style={{ textAlign: 'right', direction: 'rtl' }}
             />
           </div>
-          
-          <div className="relative">
-            <Label htmlFor="email" className="text-right block mb-3 text-base font-medium text-slate-700" style={{ textAlign: 'right' }}>
-              <div className="flex items-center gap-2 justify-end">
-                <Mail className="w-4 h-4 text-emerald-600" />
-                אימייל
-              </div>
-            </Label>
-            <Input
-              id="email"
-              type="email"
-              value={responses.email || ''}
-              onChange={(e) => handleContactField('email', e.target.value)}
-              className="text-right text-base border-slate-300 focus:border-emerald-500 focus:ring-emerald-500 h-12"
-              placeholder="example@email.com"
-              style={{ textAlign: 'right', direction: 'rtl' }}
-            />
-          </div>
-          
-          <div className="bg-slate-50 p-4 rounded-lg border border-slate-200" style={{ textAlign: 'right' }}>
+          <div className="bg-slate-50 p-4 rounded-lg border border-slate-200" style={{ textAlign: 'right', direction: 'rtl' }}>
             <p className="text-sm text-slate-600">
               💡 <strong>למה זה עוזר לנו?</strong><br />
               עם הפרטים האלה נוכל לשלוח לך עדכונים על כלים חדשים, טיפים מעשיים ולהזמין אותך לאירועים בלעדיים.

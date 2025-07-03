@@ -159,7 +159,7 @@ const QUESTIONS = [
     title: 'אם תרצה, תוכל להשאיר פרטים',
     subtitle: 'כדי שנוכל לחזור אליך ולשתף אותך בעדכונים (לא חובה)',
     type: 'contact',
-    fields: ['first_name', 'email']
+    fields: ['first_name']
   }
 ];
 
