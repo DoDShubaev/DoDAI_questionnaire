@@ -8,13 +8,13 @@ export default function ProgressIndicator({ current, total, progress }) {
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       className="mb-6 sm:mb-8 px-4 sm:px-0"
-      style={{ direction: 'rtl' }}
+      style={{ direction: "rtl", textAlign: "right" }}
     >
-      <div className="flex justify-between items-center mb-3">
-        <span className="text-xs sm:text-sm font-medium text-emerald-600">
+      <div className="flex justify-between items-center mb-3" style={{ direction: "rtl", textAlign: "right" }}>
+        <span className="text-xs sm:text-sm font-medium text-emerald-600" style={{ direction: "rtl", textAlign: "right" }}>
           {Math.round(progress)}%
         </span>
-        <span className="text-xs sm:text-sm font-medium text-slate-500">
+        <span className="text-xs sm:text-sm font-medium text-slate-500" style={{ direction: "rtl", textAlign: "right" }}>
           שאלה {current} מתוך {total}
         </span>
       </div>
@@ -32,7 +32,7 @@ export default function ProgressIndicator({ current, total, progress }) {
         />
       </div>
       
-      <div className="flex justify-between mt-2" style={{ direction: 'ltr' }}>
+      <div className="flex justify-between mt-2" style={{ direction: "ltr" }}>
         {Array.from({ length: total }, (_, i) => (
           <motion.div
             key={i}

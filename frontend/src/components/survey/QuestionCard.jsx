@@ -59,7 +59,7 @@ export default function QuestionCard({
 
     if (question.type === 'single') {
       return (
-        <div className="space-y-3" dir="rtl" style={{ direction: 'rtl' }}>
+        <div className="space-y-3" style={{ direction: "rtl", textAlign: "right" }}>
           {question.options.map((option, index) => (
             <motion.button
               key={index}
@@ -76,10 +76,10 @@ export default function QuestionCard({
                   ? 'border-emerald-500 bg-emerald-50 text-emerald-700 shadow-lg transform scale-[1.02]'
                   : 'border-slate-200 hover:border-emerald-300 text-slate-700 hover:bg-slate-50'
               }`}
-              dir="rtl"
-              style={{ textAlign: 'right', direction: 'rtl' }}
+              style={{ direction: "rtl", textAlign: "right" }}
             >
-              <div className="flex items-center justify-between" dir="rtl" style={{ direction: 'rtl' }}>
+              <div className="flex items-center justify-between flex-row-reverse" style={{ direction: "rtl", textAlign: "right" }}>
+                <span className="text-sm sm:text-base font-medium" style={{ direction: "rtl", textAlign: "right" }}>{option}</span>
                 <div className={`w-5 h-5 rounded-full border-2 flex-shrink-0 transition-colors ${
                   responses[question.field] === option
                     ? 'bg-emerald-500 border-emerald-500'
@@ -89,7 +89,6 @@ export default function QuestionCard({
                     <CheckCircle2 className="w-3 h-3 text-white m-0.5" />
                   )}
                 </div>
-                <span className="text-sm sm:text-base font-medium" dir="rtl" style={{ textAlign: 'right', direction: 'rtl' }}>{option}</span>
               </div>
               {isHovering === index && responses[question.field] !== option && (
                 <motion.div
@@ -106,7 +105,7 @@ export default function QuestionCard({
 
     if (question.type === 'single-with-other') {
       return (
-        <div className="space-y-3" style={{ direction: 'rtl' }}>
+        <div className="space-y-3" style={{ direction: "rtl", textAlign: "right" }}>
           {question.options.map((option, index) => (
             <motion.button
               key={index}
@@ -123,9 +122,10 @@ export default function QuestionCard({
                   ? 'border-emerald-500 bg-emerald-50 text-emerald-700 shadow-lg transform scale-[1.02]'
                   : 'border-slate-200 hover:border-emerald-300 text-slate-700 hover:bg-slate-50'
               }`}
-              style={{ textAlign: 'right' }}
+              style={{ direction: "rtl", textAlign: "right" }}
             >
-              <div className="flex items-center justify-between">
+              <div className="flex items-center justify-between flex-row-reverse" style={{ direction: "rtl", textAlign: "right" }}>
+                <span className="text-sm sm:text-base font-medium" style={{ direction: "rtl", textAlign: "right" }}>{option}</span>
                 <div className={`w-5 h-5 rounded-full border-2 flex-shrink-0 transition-colors ${
                   responses[question.field] === option
                     ? 'bg-emerald-500 border-emerald-500'
@@ -135,7 +135,6 @@ export default function QuestionCard({
                     <CheckCircle2 className="w-3 h-3 text-white m-0.5" />
                   )}
                 </div>
-                <span className="text-sm sm:text-base font-medium">{option}</span>
               </div>
               {isHovering === index && responses[question.field] !== option && (
                 <motion.div
@@ -160,7 +159,7 @@ export default function QuestionCard({
                   value={otherText}
                   onChange={(e) => handleOtherInputChange(e.target.value)}
                   className="mt-3 text-right text-sm sm:text-base border-emerald-300 focus:border-emerald-500 focus:ring-emerald-500"
-                  style={{ textAlign: 'right', direction: 'rtl' }}
+                  style={{ direction: "rtl", textAlign: "right" }}
                 />
               </motion.div>
             )}
@@ -171,7 +170,7 @@ export default function QuestionCard({
 
     if (question.type === 'multiple') {
       return (
-        <div className="space-y-3" style={{ direction: 'rtl' }}>
+        <div className="space-y-3" style={{ direction: "rtl", textAlign: "right" }}>
           {question.options.map((option, index) => (
             <motion.button
               key={index}
@@ -188,9 +187,10 @@ export default function QuestionCard({
                   ? 'border-emerald-500 bg-emerald-50 text-emerald-700 shadow-lg transform scale-[1.02]'
                   : 'border-slate-200 hover:border-emerald-300 text-slate-700 hover:bg-slate-50'
               }`}
-              style={{ textAlign: 'right' }}
+              style={{ direction: "rtl", textAlign: "right" }}
             >
-              <div className="flex items-center justify-between">
+              <div className="flex items-center justify-between flex-row-reverse" style={{ direction: "rtl", textAlign: "right" }}>
+                <span className="text-sm sm:text-base font-medium" style={{ direction: "rtl", textAlign: "right" }}>{option}</span>
                 <div className={`w-5 h-5 rounded-md border-2 flex-shrink-0 transition-colors ${
                   (responses[question.field] || []).includes(option)
                     ? 'bg-emerald-500 border-emerald-500'
@@ -206,7 +206,6 @@ export default function QuestionCard({
                     </motion.div>
                   )}
                 </div>
-                <span className="text-sm sm:text-base font-medium">{option}</span>
               </div>
               {isHovering === index && !(responses[question.field] || []).includes(option) && (
                 <motion.div
@@ -231,7 +230,7 @@ export default function QuestionCard({
                   value={otherText}
                   onChange={(e) => handleOtherInputChange(e.target.value)}
                   className="mt-3 text-right text-sm sm:text-base border-emerald-300 focus:border-emerald-500 focus:ring-emerald-500"
-                  style={{ textAlign: 'right', direction: 'rtl' }}
+                  style={{ direction: "rtl", textAlign: "right" }}
                 />
               </motion.div>
             )}
@@ -251,7 +250,7 @@ export default function QuestionCard({
             value={responses[question.field] || ''}
             onChange={(e) => handleTextInput(e.target.value)}
             className="min-h-32 text-right resize-none text-sm sm:text-base border-slate-300 focus:border-emerald-500 focus:ring-emerald-500"
-            style={{ textAlign: 'right', direction: 'rtl' }}
+            style={{ direction: "rtl", textAlign: "right" }}
           />
         </motion.div>
       );
@@ -263,13 +262,13 @@ export default function QuestionCard({
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           className="space-y-6"
-          style={{ direction: 'rtl' }}
+          style={{ direction: "rtl", textAlign: "right" }}
         >
           <div className="relative">
-            <Label htmlFor="first_name" className="text-right block mb-3 text-base font-medium text-slate-700" style={{ textAlign: 'right', direction: 'rtl' }}>
-              <div className="flex items-center gap-2 justify-end">
+            <Label htmlFor="first_name" className="text-right block mb-3 text-base font-medium text-slate-700" style={{ direction: "rtl", textAlign: "right" }}>
+              <div className="flex items-center gap-2 justify-end" style={{ direction: "rtl", textAlign: "right" }}>
                 <User className="w-4 h-4 text-emerald-600" />
-                השם שלך
+                <span style={{ direction: "rtl", textAlign: "right" }}>השם שלך</span>
               </div>
             </Label>
             <Input
@@ -278,11 +277,11 @@ export default function QuestionCard({
               onChange={(e) => handleContactField('first_name', e.target.value)}
               className="text-right text-base border-slate-300 focus:border-emerald-500 focus:ring-emerald-500 h-12"
               placeholder="איך קוראים לך?"
-              style={{ textAlign: 'right', direction: 'rtl' }}
+              style={{ direction: "rtl", textAlign: "right" }}
             />
           </div>
-          <div className="bg-slate-50 p-4 rounded-lg border border-slate-200" style={{ textAlign: 'right', direction: 'rtl' }}>
-            <p className="text-sm text-slate-600">
+          <div className="bg-slate-50 p-4 rounded-lg border border-slate-200" style={{ direction: "rtl", textAlign: "right" }}>
+            <p className="text-sm text-slate-600" style={{ direction: "rtl", textAlign: "right" }}>
               💡 <strong>למה זה עוזר לנו?</strong><br />
               עם הפרטים האלה נוכל לשלוח לך עדכונים על כלים חדשים, טיפים מעשיים ולהזמין אותך לאירועים בלעדיים.
             </p>
@@ -320,7 +319,7 @@ export default function QuestionCard({
   };
 
   return (
-    <div style={{ direction: 'rtl' }}>
+    <div style={{ direction: "rtl", textAlign: "right" }}>
       <motion.div
         initial={{ opacity: 0, scale: 0.95, y: 20 }}
         animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -329,13 +328,13 @@ export default function QuestionCard({
         className="w-full max-w-2xl mx-auto px-4 sm:px-0"
       >
         <Card className="border-slate-200 shadow-xl bg-white/90 backdrop-blur-sm">
-          <CardHeader className="text-right pb-6 px-6 sm:px-8">
+          <CardHeader className="text-right pb-6 px-6 sm:px-8" style={{ direction: "rtl", textAlign: "right" }}>
             <motion.h2
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
               className="text-xl sm:text-2xl md:text-3xl font-bold text-slate-900 leading-tight"
-              style={{ textAlign: 'right' }}
+              style={{ direction: "rtl", textAlign: "right" }}
             >
               {question.title}
             </motion.h2>
@@ -345,19 +344,19 @@ export default function QuestionCard({
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 }}
                 className="text-slate-600 mt-3 text-base sm:text-lg"
-                style={{ textAlign: 'right' }}
+                style={{ direction: "rtl", textAlign: "right" }}
               >
                 {question.subtitle}
               </motion.p>
             )}
           </CardHeader>
           
-          <CardContent className="px-6 sm:px-8 pb-8">
-            <div className="mb-8">
+          <CardContent className="px-6 sm:px-8 pb-8" style={{ direction: "rtl", textAlign: "right" }}>
+            <div className="mb-8" style={{ direction: "rtl", textAlign: "right" }}>
               {renderOptions()}
             </div>
             
-            <div className="flex flex-col sm:flex-row justify-between gap-4" style={{ direction: 'rtl' }}>
+            <div className="flex flex-col sm:flex-row justify-between gap-4" style={{ direction: "rtl", textAlign: "right" }}>
               <motion.div
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -371,9 +370,10 @@ export default function QuestionCard({
                       ? 'bg-gradient-to-r from-emerald-500 to-green-500 hover:from-emerald-600 hover:to-green-600 shadow-lg hover:shadow-xl transform hover:scale-105' 
                       : 'bg-slate-300 cursor-not-allowed'
                   }`}
+                  style={{ direction: "rtl", textAlign: "right" }}
                 >
                   <ChevronLeft className="w-5 h-5" />
-                  {question.id === 'details' ? 'סיים' : 'המשך'}
+                  <span style={{ direction: "rtl", textAlign: "right" }}>{question.id === 'details' ? 'סיים' : 'המשך'}</span>
                 </Button>
               </motion.div>
 
@@ -387,8 +387,9 @@ export default function QuestionCard({
                     onClick={onPrevious}
                     variant="outline"
                     className="w-full sm:w-auto flex items-center justify-center gap-3 text-base font-medium px-8 py-3 rounded-xl border-slate-300 text-slate-700 hover:bg-slate-50 transition-all duration-300"
+                    style={{ direction: "rtl", textAlign: "right" }}
                   >
-                    חזור
+                    <span style={{ direction: "rtl", textAlign: "right" }}>חזור</span>
                     <ChevronRight className="w-5 h-5" />
                   </Button>
                 </motion.div>

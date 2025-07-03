@@ -5,15 +5,16 @@ import { Heart, Sparkles } from "lucide-react";
 
 export default function ThankYouScreen() {
   return (
-    <div style={{ direction: 'rtl' }}>
+    <div style={{ direction: "rtl", textAlign: "right" }}>
       <motion.div
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         className="max-w-2xl mx-auto text-center"
+        style={{ direction: "rtl", textAlign: "right" }}
       >
         <Card className="border-0 shadow-xl bg-gradient-to-r from-indigo-50 to-purple-50">
-          <CardContent className="p-12" style={{ textAlign: 'center' }}>
-            <p className="text-lg font-semibold text-indigo-600 mb-4">
+          <CardContent className="p-12" style={{ direction: "rtl", textAlign: "center" }}>
+            <p className="text-lg font-semibold text-indigo-600 mb-4" style={{ direction: "rtl", textAlign: "center" }}>
               DOD AI
             </p>
             <motion.div
@@ -30,6 +31,7 @@ export default function ThankYouScreen() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
               className="text-3xl font-bold text-gray-900 mb-4"
+              style={{ direction: "rtl", textAlign: "center" }}
             >
               תודה רבה! ✨
             </motion.h1>
@@ -39,16 +41,16 @@ export default function ThankYouScreen() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
               className="text-lg text-gray-700 space-y-4"
-              style={{ textAlign: 'center' }}
+              style={{ direction: "rtl", textAlign: "center" }}
             >
-              <p>
+              <p style={{ direction: "rtl", textAlign: "center" }}>
                 התשובות שלך נשמרו בהצלחה!
               </p>
-              <p>
+              <p style={{ direction: "rtl", textAlign: "center" }}>
                 מה שאתה עובר – הוא לא רק שלך.<br />
                 אתה חלק מדור שלם שמתחיל ליצור לעצמו עתיד טוב יותר.
               </p>
-              <p className="font-semibold text-indigo-600">
+              <p className="font-semibold text-indigo-600" style={{ direction: "rtl", textAlign: "center" }}>
                 ואנחנו כאן כדי לצעוד איתך ביחד.
               </p>
             </motion.div>
