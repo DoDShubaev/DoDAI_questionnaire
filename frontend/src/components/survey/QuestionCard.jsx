@@ -59,7 +59,7 @@ export default function QuestionCard({
 
     if (question.type === 'single') {
       return (
-        <div className="space-y-3" style={{ direction: 'rtl' }}>
+        <div className="space-y-3" dir="rtl" style={{ direction: 'rtl' }}>
           {question.options.map((option, index) => (
             <motion.button
               key={index}
@@ -76,9 +76,10 @@ export default function QuestionCard({
                   ? 'border-emerald-500 bg-emerald-50 text-emerald-700 shadow-lg transform scale-[1.02]'
                   : 'border-slate-200 hover:border-emerald-300 text-slate-700 hover:bg-slate-50'
               }`}
-              style={{ textAlign: 'right' }}
+              dir="rtl"
+              style={{ textAlign: 'right', direction: 'rtl' }}
             >
-              <div className="flex items-center justify-between">
+              <div className="flex items-center justify-between" dir="rtl" style={{ direction: 'rtl' }}>
                 <div className={`w-5 h-5 rounded-full border-2 flex-shrink-0 transition-colors ${
                   responses[question.field] === option
                     ? 'bg-emerald-500 border-emerald-500'
@@ -88,7 +89,7 @@ export default function QuestionCard({
                     <CheckCircle2 className="w-3 h-3 text-white m-0.5" />
                   )}
                 </div>
-                <span className="text-sm sm:text-base font-medium">{option}</span>
+                <span className="text-sm sm:text-base font-medium" dir="rtl" style={{ textAlign: 'right', direction: 'rtl' }}>{option}</span>
               </div>
               {isHovering === index && responses[question.field] !== option && (
                 <motion.div
