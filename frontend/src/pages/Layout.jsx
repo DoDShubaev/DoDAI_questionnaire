@@ -40,9 +40,9 @@ export default function Layout({ children }) {
             </div>
 
             {/* App Title */}
-            <div className="flex items-center">
+              <div className="flex items-center">
               <h1 className="text-lg font-semibold text-slate-700">AI Navigator</h1>
-            </div>
+              </div>
           </div>
         </nav>
       </header>

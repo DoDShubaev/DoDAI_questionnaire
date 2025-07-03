@@ -295,7 +295,7 @@ export default function Survey() {
     return (
       <div className="min-h-screen bg-slate-50" dir="rtl">
         <div className="container mx-auto px-4 py-8" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
-          <AIAnalysis analysis={aiAnalysis} responses={responses} />
+            <AIAnalysis analysis={aiAnalysis} responses={responses} />
         </div>
       </div>
     );
